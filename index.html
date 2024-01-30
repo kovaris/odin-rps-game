@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Sixtyfour&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="body">
+        <header class="header">
+            <h3 id="header-title">Rock || Paper || Scissors</h3>
+        </header>
+
+        <div class="container-main">
+            <div class="container-pic">
+                <img src="https://images.ps-aws.com/c?url=https%3A%2F%2Fd2x51gyc4ptf2q.cloudfront.net%2Fcontent%2Fuploads%2F2022%2F12%2F10064543%2FFIFA-president-Gianni-Infantino-at-the-World-Cup.jpg" alt="gianni infantino">
+            </div>
+
+            <div class="container-feel">
+                <h2 id="today">"Today I have very strong feelings...Today I feel <span id="feeling1"></span>"</h2>
+            </div>
+
+            <div class="container-info">
+                <p>Defeat <span id="feeling2"></span> Infantino in a game of "Rock, Paper, Scissors" to save world football!</p>
+            </div>
+
+            <div class="container-board">
+                <h1 class="scoreboard"><span id="score-infantino">0</span> - <span id="score-user">0</span></h1>
+                <p id="tag-infantino"><span id="feeling3"></span> Infantino</p>
+                <p id="tag-user">You</p>
+                <p class="tag-round"> Round: <span id="round-count">0</span></p>
+            </div>
+
+            <div class="container-stats">
+                <div class="stats-infantino">
+                    <p id="infantino-last-move">last move goes here</p>
+                </div>
+                <div class="stats-result">
+                    <p id="last-result">Choose Your Weapon:</p>
+                </div>
+                <div class="stats-user">
+                    <p id="user-last-move">last move goes here</p>
+                </div>
+            </div>
+
+            <div class="container-buttons">
+                <div class="button-div">
+                    <p class="button" id="rock">🪨</p>
+                </div>
+                <div class="button-div">
+                    <p class="button" id="paper">📄</p>
+                </div>
+                <div class="button-div">
+                    <p class="button" id="scissors">✂️</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <h3 id="footer-text">Save World Football</h3>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

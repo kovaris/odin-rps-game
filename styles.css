@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+    font-family: 'Single Day', cursive;
+    color: orange;
+    background-color: black;
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#header-title {
+    font-family: 'Moirai One', system-ui;
+    font-size: 30px;
+    color: orange;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-pic {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 180px;
+    max-height: 380px;
+}
+
+img {
+    max-width: 50vw;
+    height: auto;
+    object-fit: scale-down;
+    border-radius: 12px;
+}
+
+.container-feel {
+    text-align: center;
+    width: 100%;
+}
+
+.container-board {
+    text-align: center;
+    position: relative;
+    height: 140px;
+    margin-bottom: 15px;
+}
+
+.container-info {
+    width: 100%;
+    text-align: center;
+}
+
+.scoreboard {
+    font-size: 5rem;
+}
+
+#tag-user {
+    position: relative;
+    top: -150px;
+    left: 180px;
+    font-size: 2rem;
+}
+
+#tag-infantino {
+    position: relative;
+    top: -85px;
+    left: -200px;
+    font-size: 2rem;
+}
+
+.tag-round {
+    position: relative;
+    top: -120px;
+}
+
+#feeling3 {
+    display: block;
+}
+
+.container-stats {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.stats-infantino, .stats-user {
+    min-width: 100px;
+    text-align: center;
+}
+
+.container-buttons {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.button {
+    font-size: 40px;
+    border: 2px solid orange;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: coral;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#footer-text {
+    font-family: 'Moirai One', system-ui;
+    color: orange;
+    font-size: 20px;
+}
+
+#calc-button:hover {
+    cursor: pointer;
+}
