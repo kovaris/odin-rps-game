@@ -27,6 +27,10 @@
     color: orange;
 }
 
+#header-title:hover {
+    cursor: pointer;
+}
+
 .container-main {
     display: flex;
     flex-direction: column;
@@ -38,11 +42,11 @@
     justify-content: center;
     width: 100%;
     min-height: 180px;
-    max-height: 380px;
+    max-height: 300px;
+    margin-bottom: 10px;
 }
 
 img {
-    max-width: 50vw;
     height: auto;
     object-fit: scale-down;
     border-radius: 12px;
@@ -63,17 +67,26 @@ img {
 .container-info {
     width: 100%;
     text-align: center;
+    margin-bottom: 15px;
+}
+
+.info {
+    color: white;
 }
 
 .scoreboard {
     font-size: 5rem;
+    padding: 0 15px;
+    border-radius: 12px;
+    border: 3px solid white;
 }
 
 #tag-user {
     position: relative;
     top: -150px;
-    left: 180px;
+    left: 220px;
     font-size: 2rem;
+    width: 100px;
 }
 
 #tag-infantino {
@@ -86,6 +99,8 @@ img {
 .tag-round {
     position: relative;
     top: -120px;
+    border: 3px solid white;
+    border-radius: 12px;
 }
 
 #feeling3 {
@@ -122,7 +137,8 @@ img {
 
 .button:hover {
     cursor: pointer;
-    background-color: coral;
+    background-color: orange;
+    border: 2px solid white;
 }
 
 .footer {

@@ -19,8 +19,28 @@ document.getElementById("feeling3").innerHTML = feeling;
 document.getElementById("rock").addEventListener("click", playRock);
 document.getElementById("paper").addEventListener("click", playPaper);
 document.getElementById("scissors").addEventListener("click", playScissors);
+document.getElementById("header-title").addEventListener("click", newGame);
 
 
+function newGame() {
+
+    let newFeeling = feelings[(Math.floor(Math.random() * 6))];
+
+    document.getElementById("feeling1").innerHTML = newFeeling;
+    document.getElementById("feeling2").innerHTML = newFeeling;
+    document.getElementById("feeling3").innerHTML = newFeeling;
+    document.getElementById("last-result").innerHTML = "Choose Your Weapon:"
+    document.getElementById("infantino-last-move").innerHTML = "X";
+    document.getElementById("user-last-move").innerHTML = "X";
+
+    userWins = 0;
+    userWinsSpan.innerHTML = userWins;
+    cpuWins = 0;
+    cpuWinsSpan.innerHTML = cpuWins;
+    roundCount = 0;
+    roundCountSpan.innerHTML = roundCount;
+
+}
 
 function checkScore() {
     if (userWins === 5) {
@@ -113,7 +133,7 @@ function playScissors() {
         cpuWins++;
         cpuWinsSpan.innerHTML = cpuWins;
     } else if (cpuChoice === "paper") {
-        result.innerHTML = "You WON";
+        result.innerHTML = "You WIN";
         userWins++;
         userWinsSpan.innerHTML = userWins;
     }
