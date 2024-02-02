@@ -30,8 +30,8 @@ function newGame() {
     document.getElementById("feeling2").innerHTML = newFeeling;
     document.getElementById("feeling3").innerHTML = newFeeling;
     document.getElementById("last-result").innerHTML = "Choose Your Weapon:"
-    document.getElementById("infantino-last-move").innerHTML = "X";
-    document.getElementById("user-last-move").innerHTML = "X";
+    document.getElementById("infantino-last-move").innerHTML = "";
+    document.getElementById("user-last-move").innerHTML = "";
 
     userWins = 0;
     userWinsSpan.innerHTML = userWins;
@@ -46,10 +46,15 @@ function checkScore() {
     if (userWins === 5) {
         alert(`You defeated ${feeling} Infantino and crooked FIFA!  World football has been saved!`);
         alert('Infantino: "I know what it\'s like to lose...I was born with red hair."');
-        document.getElementById("last-result").innerHTML = "Infantino and his dark Qatari overlords have been vanquished";
+        document.getElementById("last-result").innerHTML = "Infantino and his dark Qatari overlords have been vanquished.  Football is saved!";
+        userLastMove.innerHTML = "";
+        cpuLastMove.innerHTML = "";
     } else if (cpuWins === 5) {
         alert(`You failed to defeat ${feeling} Infantino and crooked FIFA.  World football is dead.`);
         alert('Infantino: "The next World Cup will be hosted by Yemen, Salt Baes Restaurant, and Narnia.  The Final will be played on Epstein Island.  SUUUUIIIIII!"'); 
+        document.getElementById("last-result").innerHTML = "WORLD FOOTBALL IS DEAD";
+        userLastMove.innerHTML = "";
+        cpuLastMove.innerHTML = "";
     }
 }
 
@@ -61,26 +66,58 @@ function playRock() {
     let cpuChoice = cpuChoices[randomChoice];
     let result = document.getElementById("last-result");
 
+    if (userWins <= 4 && cpuWins <= 4) {
+        result.innerHTML = "";
+        userLastMove.classList.add("animate__animated", "animate__fadeInRightBig");
+        cpuLastMove.classList.add("animate__animated", "animate__fadeInLeftBig");
+        roundCountSpan.classList.add("animate__animated", "animate__flipInX", "animate__faster");
+        result.classList.add("animate__animated");
+    }
+
+    setTimeout(() => {
+        document.getElementById("user-last-move").classList.remove("animate__animated", "animate__fadeInRightBig");
+        document.getElementById("infantino-last-move").classList.remove("animate__animated", "animate__fadeInLeftBig");
+        document.getElementById("round-count").classList.remove("animate__animated", "animate__flipInX", "animate__faster");
+    }, 800);
+
+    setTimeout(() => {
+        result.classList.remove("animate__animated", "animate__fadeIn", "animate__shakeX");
+        cpuWinsSpan.classList.remove("animate__animated", "animate__pulse");
+        userWinsSpan.classList.remove("animate__animated", "animate__pulse");
+    }, 1800);
+
 
     if (userWins >= 5 || cpuWins >= 5) {
         return;
     } else if (cpuChoice === userChoice) {
-        result.innerHTML = "It's a TIE!  Penalty to Argentina!";
+        setTimeout(() => {
+            result.classList.add("animate__shakeX");
+            result.innerHTML = "It's a TIE!  Penalty to Argentina!";
+        }, 1000);
     } else if (cpuChoice === "paper") {
-        result.innerHTML = "You LOSE!";
-        cpuWins++;
-        cpuWinsSpan.innerHTML = cpuWins;
+        setTimeout(() => {
+            result.classList.add("animate__fadeIn");
+            result.innerHTML = "You LOSE!";
+            cpuWinsSpan.classList.add("animate__animated", "animate__pulse");
+            cpuWins++;
+            cpuWinsSpan.innerHTML = cpuWins;
+        }, 1000);
+        setTimeout(() => checkScore(), 1500);
     } else if (cpuChoice === "scissors") {
-        result.innerHTML = "You WIN";
-        userWins++;
-        userWinsSpan.innerHTML = userWins;
+        setTimeout(() => {
+            result.classList.add("animate__fadeIn");
+            result.innerHTML = "You WIN";
+            userWinsSpan.classList.add("animate__animated", "animate__pulse");
+            userWins++;
+            userWinsSpan.innerHTML = userWins;
+        }, 1000);
+        setTimeout(() => checkScore(), 1500);
     }
 
     roundCount++;
     roundCountSpan.innerHTML = roundCount;
     userLastMove.innerHTML = userChoice;
     cpuLastMove.innerHTML = cpuChoice;
-    checkScore();
 
 }
 
