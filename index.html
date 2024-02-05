@@ -26,18 +26,19 @@
             </div>
 
             <div class="container-feel">
-                <h2 id="today">"Today I have very strong feelings...Today I feel <span id="feeling1"></span>"</h2>
+                <h2 id="today">"Today I have very strong feelings...<span id="feeling1-container">Today I feel <span id="feeling1"></span></span>"</h2>
             </div>
 
             <div class="container-info">
-                <p class="info">Defeat <span id="feeling2"></span> Infantino in a game of "Rock, Paper, Scissors" to save world football!</p>
+                <p class="info-p" id="info">Defeat <span id="feeling2"></span> Infantino in a game of "Rock, Paper, Scissors" to save world football!</p>
             </div>
 
             <div class="container-board">
-                <h1 class="scoreboard"><span id="score-infantino">0</span> - <span id="score-user">0</span></h1>
+                <h1 id="start-button">START</h1>
+                <h1 class="scoreboard" id="scoreboard-count"><span id="score-infantino">0</span> - <span id="score-user">0</span></h1>
                 <p id="tag-infantino"><span id="feeling3"></span> Infantino</p>
                 <p id="tag-user">You</p>
-                <p class="tag-round"> Round: <span id="round-count">0</span></p>
+                <p class="round-tag" id="tag-round"> Round: <span id="round-count">0</span></p>
             </div>
 
             <div class="container-stats">
@@ -45,22 +46,22 @@
                     <p id="infantino-last-move"></p>
                 </div>
                 <div class="stats-result">
-                    <p id="last-result">Choose Your Weapon:</p>
+                    <p id="last-result"></p>
                 </div>
                 <div class="stats-user">
                     <p id="user-last-move"></p>
                 </div>
             </div>
 
-            <div class="container-buttons">
+            <div class="container-buttons" id="buttons-container">
                 <div class="button-div">
-                    <p class="button" id="rock">🪨</p>
+                    <p class="button button-ref" id="rock">🪨</p>
                 </div>
                 <div class="button-div">
-                    <p class="button" id="paper">📄</p>
+                    <p class="button button-ref" id="paper">📄</p>
                 </div>
                 <div class="button-div">
-                    <p class="button" id="scissors">✂️</p>
+                    <p class="button button-ref" id="scissors">✂️</p>
                 </div>
             </div>
         </div>
