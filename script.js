@@ -37,6 +37,8 @@ function startGame() {
     setTimeout(() => {
         document.getElementById("feeling1-container").classList.remove("hide-element");
         document.getElementById("feeling1-container").classList.add("animate__animated", "animate__fadeIn", "animate__slow");
+        document.getElementById("start-button").classList.add("hide-element");
+        document.getElementById("start-button").classList.remove("animate__animated", "animate__zoomOut");
     }, 500);
 
     setTimeout(() => {
@@ -57,15 +59,11 @@ function startGame() {
         document.getElementById("tag-round").classList.add("animate__animate", "animate__zoomIn");
         document.getElementById("scoreboard-count").classList.remove("hide-element");
         document.getElementById("scoreboard-count").classList.add("animate__animated", "animate__zoomIn");
-        document.getElementById("start-button").classList.add("hide-element");
-    }, 4000);
-
-    setTimeout(() => {
-        document.getElementById("buttons-container").classList.remove("hide-element");
-        document.getElementById("buttons-container").classList.add("animate__animated", "animate__fadeInUpBig");
         document.getElementById("last-result").innerHTML = "Choose Your Weapon:"
         document.getElementById("last-result").classList.add("animate__animated", "animate__flipInX");
-    }, 5500);
+        document.getElementById("buttons-container").classList.remove("hide-element");
+        document.getElementById("buttons-container").classList.add("animate__animated", "animate__fadeInUpBig");
+    }, 4000);
 
     setTimeout(() => {
         document.getElementById("feeling1-container").classList.remove("animate__animated", "animate__fadeIn", "animate__slow");
@@ -77,7 +75,7 @@ function startGame() {
         document.getElementById("scoreboard-count").classList.remove("animate__animated", "animate__zoomIn");
         document.getElementById("buttons-container").classList.remove("animate__animated", "animate__fadeInUpBig");
         document.getElementById("last-result").classList.remove("animate__animated", "animate__flipInX");
-    }, 6500);
+    }, 5500);
 
 }
 
@@ -88,7 +86,7 @@ function newGame() {
     document.getElementById("feeling1").innerHTML = newFeeling;
     document.getElementById("feeling2").innerHTML = newFeeling;
     document.getElementById("feeling3").innerHTML = newFeeling;
-    document.getElementById("last-result").innerHTML = "Choose Your Weapon:"
+    document.getElementById("last-result").innerHTML = "";
     document.getElementById("infantino-last-move").innerHTML = "";
     document.getElementById("user-last-move").innerHTML = "";
     document.getElementById("rock").classList.remove("button-red");
@@ -97,7 +95,14 @@ function newGame() {
     document.getElementById("footer-text").style.textDecoration = "none";
     document.getElementById("last-result").classList.remove("last-result-win", "last-result-lose");
 
-
+    document.getElementById("feeling1-container").classList.add("hide-element");
+    document.getElementById("info").classList.add("hide-element");
+    document.getElementById("tag-infantino").classList.add("hide-element");
+    document.getElementById("tag-user").classList.add("hide-element");
+    document.getElementById("tag-round").classList.add("hide-element");
+    document.getElementById("buttons-container").classList.add("hide-element");
+    document.getElementById("scoreboard-count").classList.add("hide-element");
+    document.getElementById("start-button").classList.remove("hide-element");
 
     userWins = 0;
     userWinsSpan.innerHTML = userWins;
@@ -140,6 +145,7 @@ function playRock() {
     let randomChoice = Math.floor(Math.random() * 3);
     let cpuChoice = cpuChoices[randomChoice];
     let result = document.getElementById("last-result");
+
 
     if (userWins <= 4 && cpuWins <= 4) {
         result.innerHTML = "";
