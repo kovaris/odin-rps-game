@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
     font-family: 'Single Day', cursive;
     color: orange;
     background-color: black;
@@ -36,6 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
 }
 
 .container-pic {
@@ -44,14 +44,16 @@
     width: 100vw;
     min-height: 180px;
     max-height: 280px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 img {
     height: auto;
-    width: 100vw;
+    width: 400px;
     object-fit: scale-down;
     border-radius: 12px;
+    border: 2px solid orange;
 }
 
 .container-feel {
@@ -146,7 +148,7 @@ img {
     width: 60%;
     display: flex;
     justify-content: space-between;
-    max-width: 500px;
+    max-width: 470px;
     margin-bottom: 20px;
 }
 

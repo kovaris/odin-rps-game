@@ -215,26 +215,64 @@ function playPaper() {
     let cpuChoice = cpuChoices[randomChoice];
     let result = document.getElementById("last-result");
 
+    if (userWins <= 4 && cpuWins <= 4) {
+        result.innerHTML = "";
+        userLastMove.classList.add("animate__animated", "animate__fadeInRightBig");
+        cpuLastMove.classList.add("animate__animated", "animate__fadeInLeftBig");
+        roundCountSpan.classList.add("animate__animated", "animate__flipInX", "animate__faster");
+        result.classList.add("animate__animated");
+        result.classList.remove("last-result-win", "last-result-lose");
+    }
+
+
+    setTimeout(() => {
+        userLastMove.classList.remove("animate__animated", "animate__fadeInRightBig");
+        cpuLastMove.classList.remove("animate__animated", "animate__fadeInLeftBig");
+        document.getElementById("round-count").classList.remove("animate__animated", "animate__flipInX", "animate__faster");
+    }, 800);
+
+    setTimeout(() => {
+        result.classList.remove("animate__animated", "animate__fadeIn", "animate__shakeX");
+        cpuWinsSpan.classList.remove("animate__animated", "animate__flipInX");
+        userWinsSpan.classList.remove("animate__animated", "animate__flipInX");
+    }, 1800);
+
 
     if (userWins >= 5 || cpuWins >= 5) {
         return;
     } else if (cpuChoice === userChoice) {
-        result.innerHTML = "It's a TIE!  Penalty to Argentina!";
+        setTimeout(() => {
+            result.classList.add("animate__shakeX");
+            result.innerHTML = "It's a TIE!  Penalty to Argentina!";
+        }, 1000);
     } else if (cpuChoice === "scissors") {
-        result.innerHTML = "You LOSE";
-        cpuWins++;
-        cpuWinsSpan.innerHTML = cpuWins;
+        setTimeout(() => {
+            result.classList.add("animate__fadeIn", "last-result-lose");
+            result.innerHTML = "You LOSE!";
+        }, 1000);
+        setTimeout(() => {
+            cpuWinsSpan.classList.add("animate__animated", "animate__flipInX");
+            cpuWins++;
+            cpuWinsSpan.innerHTML = cpuWins;
+        }, 1350);
+        setTimeout(() => checkScore(), 1800);
     } else if (cpuChoice === "rock") {
-        result.innerHTML = "You WIN";
-        userWins++;
-        userWinsSpan.innerHTML = userWins;
+        setTimeout(() => {
+            result.classList.add("animate__fadeIn", "last-result-win");
+            result.innerHTML = "You WIN";
+        }, 1000);
+        setTimeout(() => {
+            userWinsSpan.classList.add("animate__animated", "animate__flipInX");
+            userWins++;
+            userWinsSpan.innerHTML = userWins;
+        }, 1350);
+        setTimeout(() => checkScore(), 1800);
     }
 
     roundCount++;
     roundCountSpan.innerHTML = roundCount;
     userLastMove.innerHTML = userChoice;
     cpuLastMove.innerHTML = cpuChoice;
-    checkScore();
 
 }
 
@@ -247,24 +285,62 @@ function playScissors() {
     let result = document.getElementById("last-result");
 
 
+    if (userWins <= 4 && cpuWins <= 4) {
+        result.innerHTML = "";
+        userLastMove.classList.add("animate__animated", "animate__fadeInRightBig");
+        cpuLastMove.classList.add("animate__animated", "animate__fadeInLeftBig");
+        roundCountSpan.classList.add("animate__animated", "animate__flipInX", "animate__faster");
+        result.classList.add("animate__animated");
+        result.classList.remove("last-result-win", "last-result-lose");
+    }
+
+    setTimeout(() => {
+        userLastMove.classList.remove("animate__animated", "animate__fadeInRightBig");
+        cpuLastMove.classList.remove("animate__animated", "animate__fadeInLeftBig");
+        document.getElementById("round-count").classList.remove("animate__animated", "animate__flipInX", "animate__faster");
+    }, 800);
+
+    setTimeout(() => {
+        result.classList.remove("animate__animated", "animate__fadeIn", "animate__shakeX");
+        cpuWinsSpan.classList.remove("animate__animated", "animate__flipInX");
+        userWinsSpan.classList.remove("animate__animated", "animate__flipInX");
+    }, 1800);
+
+
     if (userWins >= 5 || cpuWins >= 5) {
         return;
     } else if (cpuChoice === userChoice) {
-        result.innerHTML = "It's a TIE!  Penalty to Argentina!";
+        setTimeout(() => {
+            result.classList.add("animate__shakeX");
+            result.innerHTML = "It's a TIE!  Penalty to Argentina!";
+        }, 1000);
     } else if (cpuChoice === "rock") {
-        result.innerHTML = "You LOSE";
-        cpuWins++;
-        cpuWinsSpan.innerHTML = cpuWins;
+        setTimeout(() => {
+            result.classList.add("animate__fadeIn", "last-result-lose");
+            result.innerHTML = "You LOSE!";
+        }, 1000);
+        setTimeout(() => {
+            cpuWinsSpan.classList.add("animate__animated", "animate__flipInX");
+            cpuWins++;
+            cpuWinsSpan.innerHTML = cpuWins;
+        }, 1350);
+        setTimeout(() => checkScore(), 1800);
     } else if (cpuChoice === "paper") {
-        result.innerHTML = "You WIN";
-        userWins++;
-        userWinsSpan.innerHTML = userWins;
+        setTimeout(() => {
+            result.classList.add("animate__fadeIn", "last-result-win");
+            result.innerHTML = "You WIN";
+        }, 1000);
+        setTimeout(() => {
+            userWinsSpan.classList.add("animate__animated", "animate__flipInX");
+            userWins++;
+            userWinsSpan.innerHTML = userWins;
+        }, 1350);
+        setTimeout(() => checkScore(), 1800);
     }
 
     roundCount++;
     roundCountSpan.innerHTML = roundCount;
     userLastMove.innerHTML = userChoice;
     cpuLastMove.innerHTML = cpuChoice;
-    checkScore();
 
 }
